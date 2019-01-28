@@ -1,12 +1,21 @@
 const pkg = require('./package')
 
-export default {
+/* nuxt.config.js */
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/nuxtnight/'
+    base: '/daznuxt/'
   }
+} : {}
+
+export default {
+  ...routerBase
 }
+
 module.exports = {
   mode: 'universal',
+
+  
 
   /*
   ** Headers of the page
